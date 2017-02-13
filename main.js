@@ -45,3 +45,18 @@ $(".navbar a").on('click', function(event) {
   } // End if
 
 });
+
+//toggle logo and motto
+jQuery(function () {
+    var $LandM = $('a[class^=toggleLM]'),
+        i = 0,
+        len = $LandM.length;
+
+    $LandM.slice(1).hide();
+    setInterval(function () {
+        $LandM.eq(i).fadeOut(function () {
+            i = (i + 1) % len
+            $LandM.eq(i).fadeIn();
+        })
+    }, 2500)
+})
